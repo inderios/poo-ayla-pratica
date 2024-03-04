@@ -1,6 +1,8 @@
 package br.ufpb.dcx.tercio.quiz;
 
-public abstract class Pergunta {
+import java.io.Serializable;
+
+public abstract class Pergunta implements Serializable {
     private String enunciado, respostaCorreta;
 
     public Pergunta(String enunciado, String respostaCorreta) {

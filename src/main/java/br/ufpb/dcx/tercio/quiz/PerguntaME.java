@@ -47,4 +47,11 @@ public class PerguntaME extends Pergunta{
                 super.getRespostaCorreta().hashCode() +
                 Arrays.hashCode(alternativas);
     }
+    public String toString() {
+        StringBuilder texto = new StringBuilder(this.getEnunciado() + "\n");
+        for (String a: alternativas) {
+            texto.append(a+ "\n") ;
+        }
+        return texto.toString();
+    }
 }

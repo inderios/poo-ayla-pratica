@@ -15,12 +15,13 @@ public class SistemaQuizTercio implements SistemaQuiz{
         this.perguntalist.add(p);
     }
     @Override
-    public Pergunta sorteiaPergunta() {
+    public Pergunta sorteiaPergunta() throws PerguntaNaoExisteException {
         if (this.perguntalist.size()==0) {
-            return null;
+            throw new PerguntaNaoExisteException("Não existe pergunta cadastrada!");
         } else {
             //todo:usar random depois.
-            return this.perguntalist.get(0);
+            int posicao = (int) (Math.random() * this.perguntalist.size());
+            return this.perguntalist.get(posicao);
         }
     }
     @Override
